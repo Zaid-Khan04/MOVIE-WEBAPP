@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+.bg-image{
+    background-image: url(/bg_image.png);
+    position:fixed;
+    z-index:-1;
+    height:100vh;
+    width:100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    top:0;
+    left:0;
+}
+
+.header{
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+.heading{
+    color:white;
+    font-size: 2.8rem;
+    margin-top: -50px;
+    text-shadow:0px 5px 11px rgba(0,0,0,0.8); 
+}
+
+.search-section{
+    display:flex;
+    justify-items: center;
+    align-items: center;
+    gap:5px;
+    background-color: #0f0d23;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 999px;
+    padding: 0.6rem 1.25rem;
+    width: 20rem;
+    position: relative;
+    z-index:10;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.search-section:focus-within {
+  border-color: #ab8bff;
+  box-shadow: 0 0 12px rgba(171, 139, 255, 0.3);
+}
+
+.search-section img {
+  width: 1.25rem;
+  height: 1.25rem;
+  object-fit: contain;
+  pointer-events: none; /* Mouse actions pass straight through */
+  opacity: 0.7;
+}
+
+.input-box{
+    background: transparent;
+    color: #ffffff;
+    outline: none;
+    border:none;
+    border-radius: 999px;
+    width:15rem;
+    height: 2rem;
+    accent-color: white;
+    padding: 0.5rem;
+    cursor:text;
+}
+
+.input-box::placeholder {
+  color: #a8b5db;
+  opacity: 0.7;
+}
+
+.all-movies-ul{
+    display:grid;
+    grid-template-columns: repeat(5,minmax(0,1fr));
+}
+
+.movie-card{
+    display:flex;
+    flex-direction: column;
+    color:white;
+    gap:4px;
+    padding:1rem;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+    margin-inline: 1rem;
+    padding:1.2rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+    height:28rem;
+}
+
+.movie-title{
+    margin-top: 0.5rem;
+}
+
+.movie-card:hover{
+    border-color: rgba(59, 130, 246, 0.4);  /* blue-500 glow on hover */
+    transform: translateY(-4px);
+}
+
+.movie-details{
+    display:flex;
+    gap:4px;
+}
+
+.rating{
+    display: flex;
+    gap:3px;
+}
+
+.rating img{
+    height: 1rem;
+}
+
+.trending {
+    display: flex;
+    gap: 8rem;        /* more breathing room for numbers to sit in */
+    margin-left: 2rem;  /* so the first number "1" isn't clipped at the edge */
+    margin-top: 1rem;
+}
+
+.trending li {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.rank-no {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    position: absolute;
+    left: -2.2rem;      /* pulls it into the gap, left of the poster */
+    bottom: -0.5rem;
+    font-size: 12rem;
+    font-weight: 800;
+    z-index: 1;
+    transform: scaleY(1.3);
+    color: #0f0d23;
+    -webkit-text-stroke: 3px #faf9fd;
+}
+
+.poster-image-trending {
+    height: 20.5rem;
+    border-radius: var(--radius-xl);
+    position: relative;
+    z-index: 2;
+    left:2rem;
+}
+
+.poster-image-all-movies{
+    height:20.5rem;
+    border-radius: var(--radius-xl);
+}
+
+.movie-details-container{
+    display:flex;
+    gap: 2rem;
+    padding: 3rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+}
+
+.movie-details-poster{
+    height: 28rem;
+    border-radius: var(--radius-xl);
+    flex-shrink: 0;
+}
+
+.movie-details-info{
+    display:flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: white;
+}
+
+.movie-details-title{
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.movie-details-tagline{
+    font-style: italic;
+    color: #a8b5db;
+}
+
+.movie-details-meta{
+    display:flex;
+    align-items: center;
+    gap: 8px;
+    color: #a8b5db;
+}
+
+.movie-details-genres{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 0.5rem;
+}
+
+.genre-badge{
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.15);
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+}
+
+.movie-details-overview{
+    margin-top: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+}
